@@ -8,8 +8,8 @@ export class SmsService {
   constructor() { }
 
   private login = '98641@ekomarkethubsas';
-  private password = 'A_xGHRer';
-  private baseUrlEkosmsNew = 'https://api-public.mtarget.fr/api-sms.json?';
+  private password = 'dhsazehA';
+  private baseUrlEkosmsNew = 'https://api-public.mtarget.fr/messages';
 
 
   /**
@@ -20,16 +20,17 @@ export class SmsService {
   sendSMSUsingHttpEkomarkedNew(phoneNumbers: string, message: string) {
     let data = null;
     let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
+    //xhr.withCredentials = true;
     xhr.addEventListener('readystatechange', function () {
       if (this.readyState === 4) {
         console.log(this.responseText);
       }
     });
 
-    xhr.open('GET', this.buildSmsUrlRequestNew(phoneNumbers, message));
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.setRequestHeader("postman-token", "39dcf688-ee56-a17e-9b74-1354c556ef6c");
+    xhr.open('POST', "https://cors-anywhere.herokuapp.com/"+this.baseUrlEkosmsNew);
+    data = this.buildSmsUrlRequestNew(phoneNumbers,message);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.send(data);
   }
 
@@ -47,7 +48,7 @@ export class SmsService {
       .split('+')
       .filter((v, i, a) => a.indexOf(v) === i)
       .join('%2B');
-    return this.baseUrlEkosmsNew + 'username=' + this.login + '&password=' + this.password + '&msisdn=' + cleanPhoneList + '&msg=' + message + '&sender=VENOP';
+    return 'username=' + this.login + '&password=' + this.password + '&msisdn=' + cleanPhoneList + '&msg=' + message;
   }
 
 }
