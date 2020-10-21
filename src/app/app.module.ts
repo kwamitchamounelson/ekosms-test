@@ -10,6 +10,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AngularFireModule } from '@angular/fire';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyATRR_U0NK8SHEFF3FyfMJZ_O2B_2ggUAI",
+  authDomain: "searchwordmovies.firebaseapp.com",
+  databaseURL: "https://searchwordmovies.firebaseio.com",
+  projectId: "searchwordmovies",
+  storageBucket: "searchwordmovies.appspot.com",
+  messagingSenderId: "445853026629",
+  appId: "1:445853026629:web:e83fc7177626f6e056162c"
+};
 
 @NgModule({
   declarations: [
@@ -25,7 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCheckboxModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

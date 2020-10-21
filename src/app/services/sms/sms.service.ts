@@ -7,9 +7,9 @@ export class SmsService {
 
   constructor() { }
 
-  private login = '98641@ekomarkethubsas';
-  private password = 'A_xGHRer';
-  private baseUrlEkosmsNew = 'https://api-public.mtarget.fr/api-sms.json?';
+  login = '98641@ekomarkethubsas';
+  password = 'dhsazehA';
+  baseUrlEkosmsNew = 'https://api.ekotech.cm/messages?';
 
 
   /**
@@ -28,8 +28,8 @@ export class SmsService {
     });
 
     xhr.open('GET', this.buildSmsUrlRequestNew(phoneNumbers, message));
-    xhr.setRequestHeader("cache-control", "no-cache");
-    xhr.setRequestHeader("postman-token", "39dcf688-ee56-a17e-9b74-1354c556ef6c");
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
     xhr.send(data);
   }
 

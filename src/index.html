@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>EkosmsTest</title>
@@ -9,7 +10,25 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body class="mat-typography">
   <app-root></app-root>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyATRR_U0NK8SHEFF3FyfMJZ_O2B_2ggUAI",
+      authDomain: "searchwordmovies.firebaseapp.com",
+      databaseURL: "https://searchwordmovies.firebaseio.com",
+      projectId: "searchwordmovies",
+      storageBucket: "searchwordmovies.appspot.com",
+      messagingSenderId: "445853026629",
+      appId: "1:445853026629:web:e83fc7177626f6e056162c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
+
 </html>
