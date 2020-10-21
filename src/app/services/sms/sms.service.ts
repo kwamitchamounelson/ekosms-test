@@ -30,6 +30,8 @@ export class SmsService {
     xhr.open('GET', this.buildSmsUrlRequestNew(phoneNumbers, message));
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    xhr.setRequestHeader('credentials','true');
+    xhr.setRequestHeader('origin','https://searchwordmovies.web.app');
     xhr.send(data);
   }
 
